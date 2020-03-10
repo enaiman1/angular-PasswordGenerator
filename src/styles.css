@@ -1,12 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'bulma/css/bulma.css';
 
-body {
-    background-image: url(./assets/background2.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;
-    
-    }
 
+    html, body {
+       height: 100%;
+        background-image: url(./assets/background.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        }
+
+        .container {
+            margin-top: 30px ;
+        }
+        
   
