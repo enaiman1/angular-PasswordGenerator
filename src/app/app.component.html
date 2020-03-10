@@ -11,8 +11,17 @@
       <div class="field">
         <div class="control">
           <label class="checkbox">
-            <input (change)="onChangeUseLetters()" type="checkbox" />
-            Use Letters
+            <input (change)="onChangeUseLowerCaseLetters()" type="checkbox" />
+            Use Lower Letters
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">
+            <input (change)="onChangeUseUpperCaseLetters()" type="checkbox" />
+            Use Uppercase Letters
           </label>
         </div>
       </div>
@@ -36,12 +45,12 @@
       </div>
 
       <button [disabled]="
-          !(length && (includeLetters || includeSymbols || includeNumbers))
+          !(length && (includeLowerCaseLetters || includeUpperCaseLetters || includeSymbols || includeNumbers))
         " (click)="onButtonClick()" class="button is-link is-fullwidth">
         Generate!
       </button>
 
-      <div class="box">
+      <div class="box" *ngIf="password">
         <label>Your Password</label>
         <input class="input" [value]="password" />
       </div>

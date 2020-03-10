@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   length = 0
-  includeLetters = false;
+  includeLowerCaseLetters = false;
+  includeUpperCaseLetters = false;
   includeNumbers = false;
   includeSymbols = false;
   password = "";
@@ -20,9 +21,13 @@ export class AppComponent {
     }
   }
 
-  onChangeUseLetters(){
+  onChangeUseLowerCaseLetters(){
     // this will change the letters property is selected, the opposite of its current state
-    this.includeLetters = !this.includeLetters
+    this.includeLowerCaseLetters = !this.includeLowerCaseLetters
+  }
+  onChangeUseUpperCaseLetters(){
+    // this will change the letters property is selected, the opposite of its current state
+    this.includeUpperCaseLetters = !this.includeUpperCaseLetters
   }
 
   onChangeUseNumbers(){
@@ -37,13 +42,17 @@ export class AppComponent {
 
  onButtonClick(){
    const numbers = "1234567890"
-   const letters = "abcdefghijklmnopqrstuvwxyz"
+   const lowerCase = "abcdefghijklmnopqrstuvwxyz"
+   const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
    const symbols = "!@#$%^&*()"
 
    let validChars = "";
-   if (this.includeLetters) {
-     validChars += letters;
+   if (this.includeLowerCaseLetters) {
+     validChars += lowerCase;
    }
+   if (this.includeUpperCaseLetters) {
+    validChars += upperCase;
+  }
    if(this.includeNumbers){
      validChars += numbers;
    }
