@@ -1,7 +1,7 @@
 # Angular Password Generator
 This app allows users to randomly generate a password
 
-https://angular-password-generator-4tjf59vvr.now.sh/
+angular-password-generator-fmy3kw16j.now.sh
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
 
