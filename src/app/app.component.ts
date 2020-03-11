@@ -21,6 +21,7 @@ export class AppComponent {
     if(!isNaN(parsedValue)){
       this.length = parsedValue;
     }
+   
   }
 
   onChangeUseLowerCaseLetters(){
@@ -47,6 +48,13 @@ export class AppComponent {
    const lowerCase = "abcdefghijklmnopqrstuvwxyz"
    const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
    const symbols = "!@#$%^&*()"
+
+   if (this.length < 8 ) {
+    alert('Password length must be at least 8 characters');
+    return;
+} else if (this.length > 128) {
+    alert('Password length must be less then 129 characters')
+}
 
    let validChars = "";
    if (this.includeLowerCaseLetters) {
