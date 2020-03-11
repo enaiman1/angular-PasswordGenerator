@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,6 +13,7 @@ export class AppComponent {
   includeNumbers = false;
   includeSymbols = false;
   password = "";
+
 
   onChangeLength(value: string){
     const parsedValue = parseInt(value);
@@ -59,14 +61,30 @@ export class AppComponent {
    if(this.includeSymbols) {
      validChars += symbols;
    }
-let generatedPAssword = "";
+let generatedPassword = "";
 
 for(let i = 0; i <this.length; i++) {
   const index = Math.floor(Math.random() * validChars.length);
-  generatedPAssword += validChars[index];
+  generatedPassword += validChars[index];
 }
-this.password = generatedPAssword;
+this.password = generatedPassword;
 
  }
+ 
+ copyPassword(){
+  const passwordToCopy = document.getElementById("password") as HTMLInputElement;
 
+// grabs the content from the text area
+passwordToCopy.select();
+
+ // this method executes the selected part of the text area
+ document.execCommand('copy');
+
+alert(`Your password ${this.password} was copied to your clipboard`)
+  console.log(this.password);
+  console.log(document.execCommand('copy'))
 }
+
+  
+
+ }

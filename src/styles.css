@@ -2,7 +2,7 @@
 @import 'bulma/css/bulma.css';
 
 
-    html, body {
+    html{
        height: 100%;
         background-image: url(./assets/background.jpg);
         background-repeat: no-repeat;
@@ -14,4 +14,18 @@
             margin-top: 30px ;
         }
         
+        .mainBox {
+            border: 3px solid #8da9c7;
+            box-shadow: 3px 6px #bababa;
+        }
+
+        .passwordBox {
+            margin-top: 5px;
+            border: 1px solid #8da9c7;
+            box-shadow: 1px 3px #bababa ;
+        }
+        .copyBtn{
+            margin: 5px auto;
+
+        }
   
